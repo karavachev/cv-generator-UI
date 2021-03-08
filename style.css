@@ -1,0 +1,590 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  box-sizing: border-box;
+}
+
+:root {
+  --mainColor: #103748;
+  --secondaryColor: #568ea6;
+  --secondaryTrans: rgba(86, 142, 166, 0.2);
+  --success: #28a745;
+  --font: "Montserrat", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 1vw;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondaryColor);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--mainColor);
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--secondaryColor);
+}
+
+/*------------ animations ------------------------------ animations ------------------------ */
+
+@keyframes showInputBack {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes backButton {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes border-glow {
+  from {
+    border-color: var(--secondaryColor);
+  }
+  50% {
+    border-color: rgba(86, 142, 166, 0.15);
+  }
+  to {
+    border-color: var(--secondaryColor);
+  }
+}
+
+@keyframes shadow-glow {
+  from {
+    box-shadow: 0 0 15px 4px rgba(86, 142, 166, 0);
+  }
+  50% {
+    box-shadow: 0 0 15px 4px rgba(86, 142, 166, 0.6);
+  }
+  to {
+    box-shadow: 0 0 15px 4px rgba(86, 142, 166, 0);
+  }
+}
+
+@keyframes personBox {
+  form {
+    transform: scale(0);
+    border-radius: 100%;
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1);
+    border-radius: 100%;
+    opacity: 1;
+  }
+  to {
+    transform: scale(1);
+    border-radius: 5%;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ------------------------------------ end of animations -------------------------------------------------*/
+
+#company_logo {
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+  width: 15%;
+  z-index: 0;
+}
+
+#background {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100vw;
+  height: 100vh;
+  background: url("background_home_desktop.svg") no-repeat center center fixed;
+  background-size: cover;
+  z-index: -2;
+}
+
+#cover {
+  position: fixed;
+  width: 30vw;
+  height: 30vw;
+  top: 8vh;
+  left: 35vw;
+  right: 35vw;
+  background-color: #103748;
+  border-radius: 100%;
+  z-index: -1;
+}
+
+#logo {
+  position: fixed;
+  width: 30vw;
+  top: 8vh;
+  left: 35vw;
+  right: 35vw;
+  z-index: 0;
+}
+
+#start {
+  position: fixed;
+  width: 30vw;
+  height: 5vw;
+  top: 80vh;
+  left: 35vw;
+  right: 35vw;
+  border-radius: 35px;
+  border-style: none;
+  background-color: #568ea6;
+  font-family: "Montserrat", sans-serif;
+  font-size: calc(1vh + 1vw);
+  color: white;
+  text-align: center;
+}
+
+#message {
+  font-family: "Montserrat", sans-serif;
+  font-size: calc(1vh + 1vw);
+  color: white;
+  text-align: center;
+  position: fixed;
+  width: 30%;
+  height: 5vw;
+  top: 90%;
+  left: 35%;
+  right: 35%;
+}
+
+#how_to {
+  background-color: #568ea6;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 100vh;
+  left: 0%;
+}
+
+#back_button {
+  display: none;
+  position: fixed;
+  width: 5vw;
+  height: 5vw;
+  top: 5%;
+  left: 5%;
+  border-radius: 35px;
+  border-style: none;
+  animation-name: backButton;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  z-index: 3;
+}
+
+#how_to {
+  box-shadow: 0px -15px 20px rgba(8, 49, 65, 0.5);
+}
+
+#tutorial h1 {
+  text-align: center;
+}
+
+#video_tutorial {
+  position: absolute;
+  top: 15vh;
+  left: 30vw;
+  width: 40vw;
+  height: 22.5vw;
+}
+/*make Class button*/
+#openCollectPersonalData {
+  display: none;
+  position: fixed;
+  width: 10vw;
+  height: 5vw;
+  bottom: 5vh;
+  left: 45vw;
+  border-radius: 35px;
+  border-style: solid;
+  border-width: 5px;
+  border-color: var(--secondaryColor);
+  background-color: var(--mainColor);
+  font-family: "Montserrat", sans-serif;
+  font-size: calc(1vh + 1vw);
+  color: #568ea6;
+  text-align: center;
+  animation-name: backButton;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  z-index: 3;
+}
+
+#inputBack {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--mainColor);
+  opacity: 0;
+  animation-name: showInputBack;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+#getDetails {
+  position: fixed;
+  top: 100vh;
+}
+
+#personalData {
+  position: absolute;
+  top: 10vh;
+  left: 10vw;
+  width: 80vw;
+  height: 70vh;
+  font-family: var(--font);
+  color: var(--secondaryColor);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#personalData .saveButton {
+  position: absolute;
+  left: 82%;
+  height: 10vw;
+  margin: 1vh;
+  margin-top: 100vh;
+}
+
+#personalData input {
+  font-family: var(--font);
+  font-size: 5vw;
+  height: 10vw;
+  width: 80%;
+  margin: 1vh;
+  margin-top: 100vh;
+  padding: 1rem;
+  background-color: var(--secondaryTrans);
+  color: var(--secondaryColor);
+  border-style: solid;
+  border-radius: 1rem;
+  border-width: 0.2rem;
+  border-color: var(--secondaryColor);
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.16);
+}
+
+#personalData input:disabled {
+  border-color: var(--success);
+}
+
+#personalData input:focus {
+  box-shadow: 0 0 15px 4px rgba(86, 142, 166, 0.15);
+  outline: none;
+  animation-name: border-glow;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+#createPerson {
+  display: none;
+  position: fixed;
+  width: 10vw;
+  height: 5vw;
+  bottom: 5vh;
+  left: 45vw;
+  border-radius: 35px;
+  border-style: solid;
+  border-color: var(--secondaryColor);
+  background-color: var(--mainColor);
+  font-family: "Montserrat", sans-serif;
+  font-size: calc(1vh + 1vw);
+  color: #568ea6;
+  text-align: center;
+  animation-name: backButton;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  z-index: 3;
+}
+
+#person {
+  display: none;
+  transform: scale(0);
+  position: absolute;
+  width: 30vw;
+  height: 30vw;
+  top: 15vh;
+  left: 35vw;
+  padding: 1rem;
+  border-radius: 100%;
+  background-color: var(--mainColor);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  transform-origin: center;
+  transform-box: fill-box;
+  animation-name: personBox;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  z-index: 4;
+}
+
+#person h1 {
+  font-size: calc(2vw + 2vh);
+}
+
+#person h2 {
+  font-size: calc(1.5vw + 1.5vh);
+}
+
+#person p {
+  font-size: calc(1vw + 1vh);
+}
+
+#person::-webkit-scrollbar {
+  width: 0;
+}
+
+#personBackground {
+  display: none;
+  opacity: 0;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  z-index: 4;
+}
+
+#personName {
+  font-size: calc(1.5vw + 1.5vh);
+}
+
+.personData {
+  animation-name: fadeIn;
+  animation-delay: 1.6s;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+#continueToJobs {
+  display: none;
+  position: absolute;
+  top: calc(20vh + 30vw);
+  left: 35vw;
+  width: 30vw;
+  height: 5vw;
+  border-style: none;
+  border-radius: 30px;
+  font-family: "Montserrat", sans-serif;
+  font-size: calc(1vw + 1vh);
+  background-color: var(--mainColor);
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-delay: 2.6s;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+  z-index: 4;
+}
+/* ---------- PORTRAIT MODE --------------------------------PORTRAIT MODE------------------------------------ */
+
+@media (orientation: portrait) {
+  #company_logo {
+    position: fixed;
+    top: 2vh;
+    left: 2vh;
+    width: 25vw;
+    z-index: 0;
+  }
+
+  #logo {
+    position: fixed;
+    width: 70vw;
+    top: 10vh;
+    left: 15vw;
+    right: 15vw;
+    z-index: 0;
+  }
+
+  #cover {
+    position: fixed;
+    width: 70vw;
+    height: 70vw;
+    top: 10vh;
+    left: 15vw;
+    right: 15vw;
+    background-color: #103748;
+    border-radius: 100%;
+    z-index: -1;
+  }
+
+  #start {
+    position: fixed;
+    width: 50vw;
+    height: 10vw;
+    top: 80vh;
+    left: 25vw;
+    right: 25vw;
+    border-radius: 35px;
+    border-style: none;
+    background-color: #568ea6;
+    font-family: "Montserrat", sans-serif;
+    font-size: calc(1vh + 1.5vw);
+    color: white;
+    text-align: center;
+  }
+
+  #message {
+    position: fixed;
+    top: calc(80vh + 10vw);
+    left: 35vw;
+    right: 35vw;
+    width: 30vw;
+    height: 5vw;
+    font-family: var(--font);
+    font-size: calc(1vh + 1vw);
+    color: white;
+    text-align: center;
+  }
+
+  #back_button {
+    display: none;
+    position: fixed;
+    width: 10vw;
+    height: 10vw;
+    top: 5%;
+    left: 5%;
+    border-radius: 35px;
+    border-style: none;
+    animation-name: backButton;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    z-index: 3;
+  }
+
+  #openCollectPersonalData {
+    display: none;
+    position: fixed;
+    width: 20vw;
+    height: 10vw;
+    bottom: 5vh;
+    left: 40vw;
+    border-radius: 35px;
+    border-style: none;
+    background-color: var(--mainColor);
+    font-family: "Montserrat", sans-serif;
+    font-size: calc(1vh + 1.5vw);
+    color: #568ea6;
+    text-align: center;
+    animation-name: backButton;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    z-index: 3;
+  }
+
+  #personalData {
+    position: absolute;
+    top: 25vh;
+    left: 5vw;
+    width: 90vw;
+    height: 50vh;
+    font-family: var(--font);
+    color: var(--secondaryColor);
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  #createPerson {
+    display: none;
+    position: fixed;
+    width: 20vw;
+    height: 10vw;
+    bottom: 5vh;
+    left: 40vw;
+    border-radius: 35px;
+    border-style: solid;
+    border-width: 0.1rem;
+    border-color: var(--secondaryColor);
+    background-color: var(--mainColor);
+    font-family: "Montserrat", sans-serif;
+    font-size: calc(1vh + 1.5vw);
+    color: #568ea6;
+    text-align: center;
+    animation-name: backButton;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    z-index: 3;
+  }
+
+  #tutorialHeading {
+    position: absolute;
+    top: 15vh;
+    width: 100vw;
+    text-align: center;
+    font-size: calc(1vw + 1vh);
+  }
+
+  #video_tutorial {
+    position: absolute;
+    top: 25%;
+    left: 15vw;
+    width: 70vw;
+    height: 39.375vw;
+  }
+  #person {
+    display: none;
+    transform: scale(0);
+    position: absolute;
+    width: 80vw;
+    height: 80vw;
+    top: 15vh;
+    left: 10vw;
+    padding: 1rem;
+    border-radius: 100%;
+    background-color: var(--mainColor);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transform-origin: center;
+    transform-box: fill-box;
+    animation-name: personBox;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    z-index: 4;
+  }
+  #continueToJobs {
+    position: absolute;
+    top: calc(20vh + 80vw);
+    left: 10vw;
+    width: 80vw;
+    height: 20vw;
+    border-style: none;
+    border-radius: 20px;
+    font-family: var(--font);
+    font-size: 1rem;
+    background-color: var(--mainColor);
+    z-index: 4;
+  }
+}
